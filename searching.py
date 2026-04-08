@@ -1,4 +1,5 @@
 import json
+from itertools import count
 from pathlib import Path
 
 
@@ -19,15 +20,23 @@ def read_data(file_name, key):
         return data[key]
 
 def linear_search(numbers, searched_number):
+
+    count = 0
     positions = []
-    counter = 0
+
     for i, number in enumerate(numbers):
         if number == searched_number:
             positions.append(i)
-            counter += 1
+            count += 1
         else:
             continue
-    return positions, len(positions)
+    return {
+        "positions": positions,
+        "count": count
+    }
+
+
+def binary_search():
 
 
 
